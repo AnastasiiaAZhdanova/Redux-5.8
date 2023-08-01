@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import cx from "classnames";
 
-import { toggleTodo } from "../../store/actions/creators/todo";
+import { toggleTodo, deleteTodo } from "../../store/actions/creators/todo";
 
 import styles from './index.module.css';
 
@@ -13,8 +13,17 @@ export const Todo = ({ todo }) => {
     dispatch(toggleTodo(todo.id));
   }
 
+  const deleteTodoItem = () => {
+    dispatch(deleteTodo(todo.id));
+  };
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    event.detail === 2 ? deleteTodoItem() : toggleTodoItem();
+  };
+
   return (
-    <li className={styles.item} onClick={toggleTodoItem}>
+    <li className={styles.item} onClick={handleClick}>
       {todo.completed ? "👌" : "👋"}{" "}
       <span
         className={cx({

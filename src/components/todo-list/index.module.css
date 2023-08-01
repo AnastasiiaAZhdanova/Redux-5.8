@@ -1,5 +1,23 @@
 .list {
-    margin-top: 1rem;
-    text-align: left;
-    list-style: none;
-  }
+  margin-top: 1rem;
+  text-align: left;
+  list-style: none;
+}
+
+.select {
+  width: 200px;
+  height: 46px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 17px;
+  color: #020202;
+  transition: all 0.5s;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 15px;
+}
