@@ -3,16 +3,18 @@ import { useSelector } from "react-redux";
 import { todosSelector } from "../../store/selectors/todo";
 import { Todo } from "../todo";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import styles from "./index.module.css";
 
 export const TodoList = () => {
   const todos = useSelector(todosSelector);
+  const dispatch = useDispatch();
 
   const [filterValue, setFilter] = useState("");
 
   const handleFilter = (event) => {
-    setFilter(event.target.value);
+        dispatch(setFilter(event.target.value));
   };
 
   const filteredTodos =
@@ -22,6 +24,8 @@ export const TodoList = () => {
       ? todos.filter((todo) => !todo.completed)
       : todos;
 
+
+      
   return (
     <>
       <select className={styles.select} onChange={handleFilter}>
