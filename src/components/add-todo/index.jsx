@@ -19,7 +19,12 @@ export const AddTodo = () => {
 
   return (
     <div>
-      <input className={styles.addInput} type="text" value={value} onChange={onInputChange} />
+      <input
+        className={styles.addInput}
+        type="text"
+        value={value}
+        onChange={onInputChange}
+      />
       <button className={styles.addButton} onClick={handleAddTodo}>
         Add todo
       </button>
