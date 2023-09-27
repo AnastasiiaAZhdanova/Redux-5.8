@@ -66,12 +66,12 @@ export default function todoReducer(state = initialState, action) {
     }
 
     case FILTER_TODO: {
-      const { filter } = action.payload;
-    
+      const { filter } = action.payload;      
       return {
-        filter,
+        ...state,
+        filter
         }
-        };
+      };
     
 
     default:
